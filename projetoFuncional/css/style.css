@@ -1,0 +1,353 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: blueviolet;
+    transition: background-color 0.5s ease;
+}
+
+.calculadora {
+    border-radius: 50px;
+    width: 350px;
+    height: 520px;
+    background-color: rgb(45, 42, 55);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.5s ease;
+}
+
+.resultado {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 10px 25px 10px 10px;
+    overflow: hidden;
+}
+
+#after {
+    color: rgba(255, 255, 255, 0.397);   
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    text-align: right;
+}
+
+#resultado {
+    color: white;
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: right;
+    width: 100%;
+}
+
+.comandos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    justify-content: center;
+    align-content: center;
+    padding: 0 20px;
+}
+
+.comandos > button {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    color: white;
+    background: linear-gradient(rgb(44, 42, 53), rgb(55, 52, 64));
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2), inset 0px 0px 4px #454545;
+    border: none;
+    font-size: 15px;
+    transition: transform 0.1s ease;
+}
+
+.comandos .lateral {
+    background: linear-gradient(rgb(69, 40, 115), rgb(78, 49, 125));
+}
+
+img {
+    width: 20px;
+    height: 20px;
+}
+
+button {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    cursor: pointer;
+}
+
+.ce {
+    color: rgb(166, 49, 234) !important;
+}
+
+button:hover, .lateral:hover {
+    animation-name: mudaFundo;
+    animation-duration: 2ms;
+    animation-fill-mode: both;
+    transform: scale(1.1);
+}
+
+button:active, .lateral:active {
+    animation-name: mudaFundo;
+    animation-duration: 2ms;
+    animation-fill-mode: both;
+    transform: scale(1.1);
+}
+
+@keyframes mudaFundo {
+    from {
+        background: linear-gradient(rgb(44, 42, 53), rgb(55, 52, 64));
+    }
+    to {
+        background: linear-gradient(rgb(66, 36, 80), rgb(98, 51, 106));
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .calculadora {
+        width: 90%;
+    }
+
+    .comandos {
+        margin-top: 10%;
+        gap: 3%;
+    }
+
+    .comandos > button {
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+    }
+}
+
+@media screen and (max-height: 525px) {
+    .calculadora {
+        height: 95%;
+    }
+
+    .comandos > button {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 300px) {
+    .calculadora {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .resultado {
+        padding-right: 5px;
+    }
+
+    #resultado {
+        font-size: 30px;
+    }
+
+    .comandos {
+        gap: 5px;
+    }
+
+    .comandos > button {
+        height: 40px;
+        width: 40px;
+        font-size: 16px;
+    }
+}
+
+button {
+    transition: transform 0.1s ease;
+}
+
+button:active {
+    transform: scale(0.9);
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.ce {
+    color: rgb(166, 49, 234) !important;
+}
+
+body.tema-claro #resultado {
+    color: black; 
+}
+
+body.tema-claro #after {
+    color: black; 
+}
+body.tema-claro .ce {
+    color: #0067C0 !important; 
+}
+
+body.tema-claro {
+    background-color: #0067C0;
+}
+
+body.tema-claro .calculadora {
+    background-color: #c8c8c8; 
+}
+
+body.tema-claro .comandos > button {
+    background: white;
+    color: black;
+}
+
+body.tema-claro .comandos .lateral {
+    background: #0067C0;
+}
+
+
+#temaBtn {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    padding: 10px 20px;
+    background-color: rgb(29, 28, 35);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.tema-claro #temaBtn {
+    background-color: #9c9c9c;
+    color: #333; 
+}
+
+#temaBtn:hover {
+    transform: scale(1.1); 
+}
+
+#temaBtn:active {
+    transform: scale(0.9);
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 360px) {
+    #temaBtn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    #temaBtn {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
+
+body.tema-claro button:hover, 
+body.tema-claro .lateral:hover {
+    background: linear-gradient(rgb(96, 207, 225), rgb(46, 252, 255));
+    animation-name: none; 
+}
+
+#historicoBtn {
+    position: absolute;
+    left: 10px;  
+    top: 20px;
+    z-index: 2;
+    padding: 8px 15px;
+    background-color: rgb(29, 28, 35);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+#historicoBtn:hover {
+    transform: scale(1.1); 
+}
+
+#historicoBtn:active {
+    transform: scale(0.9);
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 360px) {
+    #historicoBtn {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+}
+
+.historico {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-height: 400px;
+    overflow-y: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.historico p {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+body.tema-claro #historicoBtn {
+    background-color: #9c9c9c;
+    color: #333;  
+}
+
+body.tema-claro #historicoBtn:hover {
+    background-color: #666; 
+}
+
+body.tema-claro #historicoBtn:active {
+    background-color: rgba(0, 0, 0, 0.2); 
+}
+
+.comandosCientifica{
+    display: none;
+}
+
+@media screen and (min-width:600px){
+    .comandosCientifica{
+        display: block!important;
+    }
+
+    .calculadora{
+        width: 500px;
+    }
+
+    .comandos{
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        gap: 10px;
+        justify-content: center;
+        align-content: center;
+        padding: 0 20px;
+        
+    }
+
+    .comandos > button {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+

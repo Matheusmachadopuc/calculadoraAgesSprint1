@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" rel="stylesheet">
+    <title>Calculadora</title>
+    
+</head>
+<body>
+    <header class="fundoCor"></header>
+    <button id="temaBtn">Mudar Tema</button>
+    <section class="calculadora"> 
+        <div class="resultado">
+            <button id="historicoBtn">Histórico</button>
+            <p id="after"></p>
+            <p id="resultado"></p>
+        </div>  
+        <div class="comandos" id="comandos">
+            <button class="comandosCientifica" onclick="insert('sin(')">sen</button>
+            <button class="comandosCientifica" onclick="insert('cos(')">cos</button>
+            <button class="comandosCientifica" onclick="insert('tan(')">tan</button>
+            <button class="comandosCientifica" onclick="insert('log(')">log</button>
+            <button class="comandosCientifica" onclick="insert('ln(')">ln</button>
+            <button class="comandosCientifica" onclick="insert('sqrt(')">√</button>
+            <button class="comandosCientifica" onclick="insert('exp(')">exp</button>
+            <button class="comandosCientifica" onclick="insert('pi')">π</button>
+            <button class="comandosCientifica" onclick="insert('e')">e</button>
+            <button class="comandosCientifica" onclick="insert('^')">^</button>
+            <button class="comandosCientifica" onclick="insert('(')">(</button>
+            <button class="comandosCientifica" onclick="insert(')')">)</button>
+            <button class="comandosCientifica" onclick="insert('abs(')">| |</button>
+            <button class="comandosCientifica" onclick="insert('log10(')">log10</button>
+            <button class="comandosCientifica" onclick="insert('pow(')">pow</button>
+            <button class="comandosCientifica" onclick="insert('factorial(')">!</button>     
+            <button class="ce" onclick="c()">CE</button>
+            <button onclick="clean()">C</button>
+            <button onclick="insertOp('%')">%</button>
+            <button class="lateral imagem" id="lateral" onclick="insertOp('÷')"><img src="Imagens/divide.png" id="imagemDivide"></button>
+            <button onclick="insert('7')">7</button>
+            <button onclick="insert('8')">8</button>
+            <button onclick="insert('9')">9</button>
+            <button class="lateral imagem"id="lateral" onclick="insertOp('x')">X</button>
+            <button onclick="insert('4')">4</button>
+            <button onclick="insert('5')">5</button>    
+            <button onclick="insert('6')">6</button>
+            <button class="lateral"id="lateral" onclick="insertOp('-')">-</button>
+            <button onclick="insert('1')">1</button>
+            <button onclick="insert('2')">2</button>
+            <button onclick="insert('3')">3</button>
+            <button class="lateral"id="lateral" onclick="insertOp('+')">+</button>
+            <button onclick="mudaSinal()"><img src="Imagens/maisEMenos.png"></button>
+            <button onclick="insert('0')">0</button>
+            <button onclick="insert(',')">,</button>
+            <button class="lateral" onclick="calcular()">=</button>
+            
+        </div> 
+    </section>
+    
+    <script defer src="js/java.js"></script>
+</body>
+</html>
